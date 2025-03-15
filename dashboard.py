@@ -200,29 +200,6 @@ plt.legend()
 plt.grid(True)
 st.pyplot(plt)
 
-weather_names = {
-    1: 'Clear', 
-    2: 'Mist', 
-    3: 'Light snow', 
-    4: 'Heavy Rain'
-}
-
-plt.figure(figsize=(50, 20))
-sns.boxplot(x='weathersit', y='casual', data=main_df_day, color='blue', label='Casual')
-sns.boxplot(x='weathersit', y='registered', data=main_df_day, color='lightgreen', label='Registered')
-
-xticklabels = plt.gca().get_xticklabels()
-
-for label in xticklabels:
-    label.set_text(weather_names.get(int(label.get_text()), label.get_text()))
-
-plt.gca().set_xticklabels(xticklabels)
-plt.xlabel('Kondisi cuaca')
-plt.ylabel('Total Penyewa sepeda')
-plt.title('Registered user vs casual user berdasarkan kondisi cuaca')
-plt.legend()
-st.pyplot(plt)
-
 #trend penyewaan sepeda 
 st.subheader('Bike rental trend')
 
@@ -261,5 +238,8 @@ plt.title('Frekuensi penyewaan sepeda berdasarkan jam dan hari')
 plt.ylabel('Jam')
 plt.xlabel('Hari')
 st.pyplot(plt)
+
+
+
 
 
